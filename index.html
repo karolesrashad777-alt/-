@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝑀𝑖𝑁𝐴 𝑆𝑇𝑂𝑅𝐸 | متجر الإكسسوارات والعروض</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شريط التنقل العلوي -->
+    <header>
+        <div class="logo">𝑀𝑖𝑁𝐴 𝑆𝑇𝑂𝑅𝐸</div>
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#offers">العروض</a>
+            <a href="#products">المنتجات</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+        <div class="cart-btn" onclick="toggleCart()">
+            🛒 السلة (<span id="cart-count">0</span>)
+        </div>
+    </header>
+
+    <!-- الواجهة الترحيبية -->
+    <section id="home" class="hero">
+        <h1>تألقي بأرقى الإكسسوارات والعروض المميزة</h1>
+        <p>هدايا بسيطة من القلب ومنتجات مختارة بعناية من 𝑀𝑖𝑁𝐴 𝑆𝑇𝑂𝑅𝐸</p>
+        <a href="#offers" class="btn">اكتشف العروض</a>
+    </section>
+
+    <!-- خانة العروض (3 عروض) -->
+    <section id="offers" class="offers-section">
+        <h2>العروض</h2>
+        <div class="products-grid" id="offers-grid">
+
+            <!-- عرض 1: مج ديجيتال مميز بالحفر -->
+            <div class="product-card offer-card">
+                <span class="badge">عرض مميز ❤️</span>
+                <img src="digital-mug-engraved.jpg" alt="مج ديجيتال مميز بالحفر">
+                <h3>مج ديجيتال مميز بالحفر</h3>
+                <p class="offer-desc">متاح الحفر على المج بالاسم أو التصميم اللي تحبيه وخلي مجك مميز بيكي 💕</p>
+                <p class="price">200 ج.م</p>
+                <button class="add-cart-btn" onclick="addItemToCart('مج ديجيتال مميز بالحفر', 200, 'اكتب الاسم أو التصميم المطلوب حفره على المج:')">أضف إلى السلة</button>
+                <button class="buy-now-btn" onclick="buySingleProduct('مج ديجيتال مميز بالحفر')">طلب الشراء</button>
+            </div>
+
+            <!-- عرض 2: طقم مجين كابلز بورسلين (آريل وإريك) -->
+            <div class="product-card offer-card">
+                <span class="badge">عرض مميز ❤️</span>
+                <img src="couple-mugs.jpg" alt="طقم مجين كابلز آريل وإريك">
+                <h3>طقم مجين كابلز بورسلين (آريل وإريك)</h3>
+                <p class="offer-desc">صباح الحب والروقان — مجين بورسلين بجودة ممتازة وشكل كيوت جداً 🧜‍♀️💕👑</p>
+                <p class="price">270 ج.م</p>
+                <button class="add-cart-btn" onclick="addItemToCart('طقم مجين كابلز بورسلين (آريل وإريك)', 270)">أضف إلى السلة</button>
+                <button class="buy-now-btn" onclick="buySingleProduct('طقم مجين كابلز بورسلين (آريل وإريك)')">طلب الشراء</button>
+            </div>
+
+            <!-- عرض 3: طقم المج الحراري الفاخر (Vacuum Flask Set) -->
+            <div class="product-card offer-card">
+                <span class="badge">عرض مميز 🔥</span>
+                <img src="vacuum-flask-set.jpg" alt="طقم المج الحراري الفاخر Vacuum Flask Set">
+                <h3>طقم المج الحراري الفاخر (Vacuum Flask Set)</h3>
+                <p class="offer-desc">سعة 500 مل (Hot &amp; Cold) مع 3 أكواب (غطاء المج + كوبين إضافيين) — متوفر بـ 4 ألوان أنيقة</p>
+                <p class="price">210 ج.م</p>
+                <button class="add-cart-btn" onclick="addItemToCart('طقم المج الحراري الفاخر (Vacuum Flask Set)', 210, 'اختر اللون (الأسود الملكي / الرمادي / الأزرق / الفضي):')">أضف إلى السلة</button>
+                <button class="buy-now-btn" onclick="buySingleProduct('طقم المج الحراري الفاخر (Vacuum Flask Set)')">طلب الشراء</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- خانة المنتجات (5 منتجات) -->
+    <section id="products" class="products-section">
+        <h2>المنتجات</h2>
+        <div class="products-grid" id="products-grid">
+
+            <!-- منتج 1: محفظة جلد + مج سحري بأقل من 350 جنيه -->
+            <div class="product-card">
+                <div class="offer-images">
+                    <img src="leather-wallet.jpg" alt="محفظة جلد">
+                    <img src="magic-mug.jpg" alt="مج سحري">
+                </div>
+                <h3>محفظة جلد أنيقة + مج سحري</h3>
+                <p class="offer-desc">هدية بسيطة بس من القلب بأقل من 350 جنيه مع إمكانية طباعة الاسم أو صورة حسب اختيارك</p>
+                <p class="price">320 ج.م <span class="old-price">350 ج.م</span></p>
+                <button class="add-cart-btn" onclick="addItemToCart('محفظة جلد + مج سحري', 320, 'اكتب الاسم أو العبارة المطلوبة للهدية:')">أضف إلى السلة</button>
+                <button class="buy-now-btn" onclick="buySingleProduct('محفظة جلد + مج سحري')">طلب الشراء</button>
+            </div>
+
+            <!-- منتج 2: بلاك فرايدي — محفظة شيك + مج ديجيتال + الحفر ببلاش -->
+            <div class="product-card">
+                <div class="offer-images">
+                    <img src="chic-wallet.jpg" alt="محفظة شيك">
+                    <img src="digital-mug.jpg" alt="مج ديجيتال">
+                </div>
+                <h3>عرض البلاك فرايدي: محفظة شيك + مج ديجيتال</h3>
+                <p class="offer-desc">محفظة شيك + مج ديجيتال تحفة ومعاهم الحفر ببلاش — هدية تفرق في الهدية 🎀</p>
+                <p class="price">300 ج.م <span class="old-price">350 ج.م</span></p>
+                <button class="add-cart-btn" onclick="addItemToCart('عرض البلاك فرايدي (محفظة شيك + مج ديجيتال + حفر مجاني)', 300, 'اكتب الاسم المطلوب حفره مجاناً:')">أضف إلى السلة</button>
+                <button class="buy-now-btn" onclick="buySingleProduct('عرض البلاك فرايدي (محفظة شيك + مج ديجيتال + حفر مجاني)')">طلب الشراء</button>
+            </div>
+
+            <!-- منتج 3: إنسيال بحفر تفاصيل العيون -->
+            <div class="product-card">
+                <img src="eyes-bracelet.jpg" alt="إنسيال محفور بتفاصيل العيون">
+                <h3>إنسيال مميز بحفر تفاصيل العيون</h3>
+                <p class="offer-desc">سر في معصمك — احفر تفاصيل عيون من تحب على إنسيال يلامس القلب بسعر خاص للبلاك فرايدي 🎁</p>
+                <p class="price">160 ج.م</p>
+                <button class="add-cart-btn" onclick="addItemToCart('إنسيال مميز بحفر تفاصيل العيون', 160, 'اكتب اسم أو ملاحظة (وسيتم إرسال صورة العيون على واتساب):')">أضف إلى السلة</button>
+                <button class="buy-now-btn" onclick="buySingleProduct('إنسيال مميز بحفر تفاصيل العيون')">طلب الشراء</button>
+            </div>
+
+            <!-- منتج 4: المج السيراميك الأنيق (150 مل) -->
+            <div class="product-card">
+                <img src="ceramic-flask-mug.jpg" alt="مج سيراميك أنيق">
+                <h3>المج السيراميك الأنيق (150 مل)</h3>
+                <p class="offer-desc">تصميم يخطف العين بألوان مميزة — جدد روتين قهوتك واطلبه قبل نفاذ الكمية 🛍️</p>
+                <p class="price">160 ج.م</p>
+                <button class="add-cart-btn" onclick="addItemToCart('المج السيراميك الأنيق (150 مل)', 160, 'اكتب اللون المطلوب للمج:')">أضف إلى السلة</button>
+                <button class="buy-now-btn" onclick="buySingleProduct('المج السيراميك الأنيق (150 مل)')">طلب الشراء</button>
+            </div>
+
+            <!-- منتج 5: مج القهوة المحمول (Enjoy Coffee) -->
+            <div class="product-card">
+                <img src="enjoy-coffee-mug.jpg" alt="مج القهوة المحمول Enjoy Coffee">
+                <h3>مج القهوة المحمول (Enjoy Coffee)</h3>
+                <p class="offer-desc">متوفر بـ 5 ألوان (أسود، أحمر، أبيض، أخضر غامق، أصفر) مع حزام حمل وغطاء محكم مانع للتسريب 🔒</p>
+                <p class="price">200 ج.م</p>
+                <button class="add-cart-btn" onclick="addItemToCart('مج القهوة المحمول (Enjoy Coffee)', 200, 'اختر اللون (الأسود / الأحمر / الأبيض / الأخضر الغامق / الأصفر):')">أضف إلى السلة</button>
+                <button class="buy-now-btn" onclick="buySingleProduct('مج القهوة المحمول (Enjoy Coffee)')">طلب الشراء</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- نافذة سلة المشتريات -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+            <h3>سلة المشتريات</h3>
+            <p style="font-size: 13px; color: #555; margin-top: 8px;">واتساب المتجر: <strong>+20 12 28471404</strong></p>
+            <ul id="cart-items"></ul>
+            <p class="total">الإجمالي: <span id="cart-total">0</span> ج.م</p>
+            <button class="checkout-btn" onclick="checkout()">إتمام الطلب عبر واتساب</button>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer id="contact">
+        <p>للطلب والاستفسار عبر واتساب: <a href="https://wa.me/201228471404" target="_blank" style="color: #d4af37; text-decoration: none; font-weight: bold;">+20 12 28471404</a></p>
+        <p style="margin-top: 8px;">جميع الحقوق محفوظة &copy; 2026 𝑀𝑖𝑁𝐴 𝑆𝑇𝑂𝑅𝐸</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
